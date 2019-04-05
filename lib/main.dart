@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'product_manager.dart';
 
-
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
         debugShowCheckedModeBanner: true,
         title: 'Hello',
@@ -22,10 +20,7 @@ class MyApp extends StatelessWidget{
               onPressed: () {},
             ),
             body: ListView(
-              children: <Widget>[
-                ProductManager('Food Tester')
-              ],
+              children: <Widget>[ProductManager('Food Tester')],
             )));
   }
 }
-
