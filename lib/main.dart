@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'product_manager.dart';
+import './pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,20 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: true,
-        title: 'Hello',
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('Easy List'),
-            ),
-            floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () {
-                 
-              },
-            ),
-            body: ProductManager(),
-            )
-            );
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+        accentColor: Colors.orangeAccent,
+      ),
+      debugShowCheckedModeBanner: true,
+      title: 'Hello',
+      home: Homepage(),
+    );
   }
 }
