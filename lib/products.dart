@@ -5,14 +5,22 @@ class Products extends StatelessWidget {
   Products(this.products);
 
   Widget _buidProduct(BuildContext context, int index) {
-    return Card(
-      child: Column(
-        children: <Widget>[
-          Image.asset('assets/food.jpeg'),
-          Text(products[index]),
-        ],
-      ),
-    );
+    Widget item;
+    if (products.length > 0) {
+      item = Card(
+        child: Column(
+          children: <Widget>[
+            Image.asset('assets/food.jpeg'),
+            Text(products[index]),
+          ],
+        ),
+      );
+    } else {
+      item = Center(
+        child: Text('Press add product button to add product'),
+      );
+    }
+    return item;
   }
 
   @override
