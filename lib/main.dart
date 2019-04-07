@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
             ),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
-              onPressed: () {},
+              onPressed: () {
+                 
+              },
             ),
-            body: ListView(
-              children: <Widget>[ProductManager('Food Tester')],
-            )));
+            body: ProductManager('Food Tester'),
+            )
+            );
   }
 }
