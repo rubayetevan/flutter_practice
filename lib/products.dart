@@ -19,7 +19,10 @@ class Products extends StatelessWidget {
               children: <Widget>[
                 FlatButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>ProductPage(),),);
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context)=>ProductPage("Product Details","assets/food.jpeg")
+                        ,),
+                    );
                   },
                   child: Text('Details'),
                 )
