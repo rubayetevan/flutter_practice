@@ -5,6 +5,29 @@ class ProductPage extends StatelessWidget {
   Map<String, String> product;
 
   ProductPage(this.product);
+  _showWarningDialog(BuildContext context){
+    showDialog(context: context, builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Are you sure?'),
+        content: Text('This ca not be unndone!'),
+        actions: <Widget>[
+          FlatButton(
+            child: Text('Continue'),
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context, true);
+            },
+          ),
+          FlatButton(
+            child: Text('Discard'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +49,7 @@ class ProductPage extends StatelessWidget {
                   child: RaisedButton(
                     color: Theme.of(context).accentColor,
                     onPressed: () {
-                      Navigator.pop(context, true);
+                      _showWarningDialog(context);
                     },
                     child: Text('Delete'),
                   ))
@@ -35,7 +58,7 @@ class ProductPage extends StatelessWidget {
         ),
       ),
       onWillPop: () {
-        Navigator.pop(context,false);
+        Navigator.pop(context, false);
         print("back button pressed");
         return Future.value(false);
       },
